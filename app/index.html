@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Cifra de transposição colunar com JavaScript</title>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+  <!-- build:css styles/vendor.css -->
+  <!-- endbuild -->
+</head>
+<body>
+  <main>
+    <header>
+      <!--  <h1>Cifra de transposição colunar com JavaScript</h1>-->
+      <h1>Cifra</h1>
+    </header>
+    <section>
+      <div>
+        <h2>Cifrar</h2>
+        <p>
+          <label for="encryptKey">Chave</label>
+          <input type="text" name="encryptKey" id="encryptKey" placeholder="Insira a chave (ex. &quot;secreta&quot;)">
+        </p>
+        <p>
+          <label for="encryptKey">Mensagem</label>
+          <input type="text" name="encryptMessage" id="encryptMessage" placeholder="Insira a mensagem (ex. &quot;Bumba meu boi&quot;)">
+        </p>
+        <p>
+          <button id="btnResultCipher">Cifrar</button>
+        </p>
+        <p>
+          <label for="resultCipher">Cifra</label>
+          <textarea name="resultCipher" id="resultCipher" cols="30" rows="2" placeholder="dai euu gmb omy rbo sbe" readonly aria-readonly="true"></textarea>
+        </p>
+      </div>
+    </section>
+    <section>
+      <div>
+        <h2>Decifrar</h2>
+        <p>
+          <label for="decryptKey">Chave</label>
+          <input type="text" name="decryptKey" id="decryptKey" placeholder="Insira a chave (ex. &quot;secreta&quot;)">
+        </p>
+        <p>
+          <label for="decryptCipher">Cifra</label>
+          <input type="text" name="decryptCipher" id="decryptCipher" placeholder="Insira a cifra (ex. &quot;dai euu gmb omy rbo sbe&quot;)">
+        </p>
+        <p>
+          <button id="btnResultMessage">Decifrar</button>
+        </p>
+        <p>
+          <label for="resultMessage">Mensagem</label>
+          <textarea name="resultMessage" id="resultMessage" cols="30" rows="3" placeholder="bumbameuboiy" readonly aria-readonly="true"></textarea>
+        </p>
+      </div>
+    </section>
+    <footer>
+      FD
+    </footer>
+  </main>
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <!--    <script>-->
+  <!--      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=-->
+  <!--      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;-->
+  <!--      e=o.createElement(i);r=o.getElementsByTagName(i)[0];-->
+  <!--      e.src='https://www.google-analytics.com/analytics.js';-->
+  <!--      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));-->
+  <!--      ga('create','UA-XXXXX-X');ga('send','pageview');-->
+  <!--    </script>-->
+  <!-- build:js scripts/vendor.js -->
+  <!-- endbuild -->
+  <!-- build:js scripts/main.js -->
+  <script src="scripts/transposition-cipher.js"></script>
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
+</body>
+</html>
