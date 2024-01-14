@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cifra de Transposição Colunar com JavaScript</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Cifra de Transposição Colunar com JavaScript</h1>
+      </header>
+      <section>
+        <div>
+          <h2>Cifrar</h2>
+          <p>
+            <label for="encryptKey">Chave</label>
+            <input type="text" name="encryptKey" id="encryptKey" placeholder="Insira a chave (ex. &quot;secreta&quot;)">
+          </p>
+          <p>
+            <label for="encryptKey">Mensagem</label>
+            <input type="text" name="encryptMessage" id="encryptMessage" placeholder="Insira a mensagem (ex. &quot;Bumba meu boi&quot;)">
+          </p>
+          <p>
+            <button id="btnResultCipher">Cifrar</button>
+          </p>
+          <p>
+            <label for="resultCipher">Cifra</label>
+            <textarea name="resultCipher" id="resultCipher" cols="30" rows="2" placeholder="dai euu gmb omy rbo sbe" readonly aria-readonly="true"></textarea>
+          </p>
+        </div>
+      </section>
+      <section>
+        <div>
+          <h2>Decifrar</h2>
+          <p>
+            <label for="decryptKey">Chave</label>
+            <input type="text" name="decryptKey" id="decryptKey" placeholder="Insira a chave (ex. &quot;secreta&quot;)">
+          </p>
+          <p>
+            <label for="decryptCipher">Cifra</label>
+            <input type="text" name="decryptCipher" id="decryptCipher" placeholder="Insira a cifra (ex. &quot;dai euu gmb omy rbo sbe&quot;)">
+          </p>
+          <p>
+            <button id="btnResultMessage">Decifrar</button>
+          </p>
+          <p>
+            <label for="resultMessage">Mensagem</label>
+            <textarea name="resultMessage" id="resultMessage" cols="30" rows="3" placeholder="bumbameuboiy" readonly aria-readonly="true"></textarea>
+          </p>
+        </div>
+      </section>
+      <footer>
+        <p>
+          Feito com curiosidade por Flávio Dutra
+          <a href="https://github.com/flaviodut/transposition-cipher">Repositório GitHub</a>
+        </p>
+      </footer>
+    </main>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

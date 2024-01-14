@@ -1,3 +1,6 @@
+import './styles/main.css'
+import { transpositionCipher } from './scripts/transposition-cipher.js';
+
 document.querySelector('#btnResultCipher').addEventListener('click', evt => {
   evt.preventDefault();
 
@@ -7,7 +10,6 @@ document.querySelector('#btnResultCipher').addEventListener('click', evt => {
   if (key !== '' && message !== '') {
     document.querySelector('#resultCipher').value = transpositionCipher.encrypt(key, message);
   }
-
 }, false);
 
 document.querySelector('#btnResultMessage').addEventListener('click', evt => {
@@ -16,10 +18,7 @@ document.querySelector('#btnResultMessage').addEventListener('click', evt => {
   const key = document.querySelector('#decryptKey').value;
   const message = document.querySelector('#decryptCipher').value;
 
-  console.log(key === '', message === '');
-
   if (key !== '' && message !== '') {
     document.querySelector('#resultMessage').value = transpositionCipher.decrypt(key, message);
   }
-
 }, false);
