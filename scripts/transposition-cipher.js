@@ -1,6 +1,6 @@
 // TODO: Quebrar em pequenas funções para facilitar os testes
 
-const transpositionCipher = (function () {
+export const transpositionCipher = (function () {
   function removeAccents(string) {
     const accents    = 'ÀÁÂÃÄÅĄàáâãäåąßÒÓÔÕÕÖØÓòóôõöøóÈÉÊËĘèéêëęðÇĆçćÐÌÍÎÏìíîïÙÚÛÜùúûüÑŃñńŠŚšśŸÿýŽŻŹžżź';
     const accentsOut = 'AAAAAAAaaaaaaaBOOOOOOOOoooooooEEEEEeeeeeeCCccDIIIIiiiiUUUUuuuuNNnnSSssYyyZZZzzz';
