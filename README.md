@@ -4,7 +4,7 @@ _(Also know as Columnar Transposition Cipher)_
 
 Gosto bastante de história em geral e depois que vi o filme que trata da equipe de criptografia liderada por Alan Turing, "O jogo da imitação", acabei recebendo a indicação do livro que conta a história da criptografia ao longo dos séculos.
 
-Por curiosidade, resolvi aplicar o conceito de uma das técnicas antigas de criptografia apresentadas no livro e escrevi esse programa.   
+Por curiosidade, resolvi aplicar o conceito de uma das técnicas antigas de criptografia apresentadas no livro e escrevi esse programa.
 
 Abaixo, segue o trecho do livro que explica o funcionamento da __transposição colunar__ e que me deixou curioso para implementar uma solução:
 

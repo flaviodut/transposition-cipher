@@ -1,4 +1,5 @@
-import './styles/main.css'
+// import './styles/main.css';
+import 'bootstrap/scss/bootstrap.scss';
 import { transpositionCipher } from './scripts/transposition-cipher.js';
 
 document.querySelector('#btnResultCipher').addEventListener('click', evt => {
