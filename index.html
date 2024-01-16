@@ -7,54 +7,237 @@
   </head>
   <body>
     <main>
-      <header>
-        <h1>Cifra de Transposição Colunar com JavaScript</h1>
+      <header class="mb-5 py-5 text-bg-primary">
+        <div class="container text-center">
+          <h1>Cifra de Transposição Colunar com JavaScript<small></h1>
+          <p class="fs-4 fst-italic">Columnar Transposition Cipher</p>
+        </div>
       </header>
-      <section>
-        <div>
-          <h2>Cifrar</h2>
+      <article class="container">
+        <div class="row mb-5">
+          <div class="col-12 col-md-6">
+            <section>
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h2 class="card-title">Cifrar</h2>
+                  <div class="row mb-3">
+                    <div class="col-12">
+                      <label class="form-label" for="encryptKey">Chave</label>
+                      <input id="encryptKey" class="form-control" type="text" name="encryptKey" placeholder="Insira a chave (ex. &quot;secreta&quot;)" maxlength="50" tabindex="0">
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-12">
+                      <label class="form-label" for="encryptKey">Mensagem</label>
+                      <input id="encryptMessage" class="form-control" type="text" name="encryptMessage" placeholder="Insira a mensagem (ex. &quot;Bumba meu boi&quot;)" maxlength="250" tabindex="0">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 d-flex align-items-end">
+                      <button id="btnResultCipher" class="btn btn-primary w-100" tabindex="0">Cifrar</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer pb-3">
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label" for="resultCipher">Cifra</label>
+                      <textarea id="resultCipher" class="form-control" name="resultCipher" rows="3" placeholder="dai euu gmb omy rbo sbe" readonly aria-readonly="true" tabindex="0"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="col-12 col-md-6">
+            <section>
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h2 class="card-title">Decifrar</h2>
+                  <div class="row mb-3">
+                    <div class="col-12">
+                      <label class="form-label" for="decryptKey">Chave</label>
+                      <input id="decryptKey" class="form-control" type="text" name="decryptKey" placeholder="Insira a chave (ex. &quot;secreta&quot;)" maxlength="50" tabindex="0">
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-12">
+                      <label class="form-label" for="decryptCipher">Cifra</label>
+                      <input id="decryptCipher" class="form-control" type="text" name="decryptCipher" placeholder="Insira a cifra (ex. &quot;dai euu gmb omy rbo sbe&quot;)" maxlength="250" tabindex="0">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 d-flex align-items-end">
+                      <button id="btnResultMessage" class="btn btn-primary w-100" tabindex="0">Decifrar</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer pb-3">
+                  <div class="row">
+                    <div class="col-12">
+                      <label class="form-label" for="resultMessage">Mensagem</label>
+                      <textarea id="resultMessage" class="form-control" name="resultMessage" rows="3" placeholder="bumbameuboiy" readonly aria-readonly="true" tabindex="0"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="row mb-5 justify-content-center">
+          <div class="col-md-6">
+            <h2>Sobre</h2>
+            <p>Gosto bastante de história em geral e depois que vi o filme que trata da equipe de criptografia liderada por Alan Turing, "O jogo da imitação", acabei recebendo a indicação do livro que conta a história da criptografia ao longo dos séculos.</p>
+            <p>Por curiosidade, resolvi aplicar o conceito de uma das técnicas antigas de criptografia apresentadas no livro e escrevi esse programa.</p>
+            <p>Abaixo, segue o trecho do livro que explica o funcionamento da <strong>transposição colunar</strong> e que me deixou curioso para implementar uma solução:</p>
+            <p class="fst-italic">Depois da Batalha da Jutlândia, em junho de 1916, os alemães recorreram principalmente a seus submarinos para atacar os britânicos. Eles usavam o mesmo livro de códigos, mas supercifrado com transposição colunar.</p>
+            <p class="fst-italic">Para misturar as letras usando transposição colunar, a mensagem é escrita em linhas de comprimento fixado pela palavra-chave. Se a mensagem "attack British fleet at dawn tomorrow" (atacar a frota britânica amanhã ao amanhecer) for cifrada usando a palavra-chave `UBOATS`, a tabela ficará assim:</p>
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr class="table-primary">
+                  <th>U</th>
+                  <th>B</th>
+                  <th>O</th>
+                  <th>A</th>
+                  <th>T</th>
+                  <th>S</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>a</td>
+                  <td>t</td>
+                  <td>t</td>
+                  <td>a</td>
+                  <td>c</td>
+                  <td>k</td>
+                </tr>
+                <tr>
+                  <td>b</td>
+                  <td>r</td>
+                  <td>i</td>
+                  <td>t</td>
+                  <td>i</td>
+                  <td>s</td>
+                </tr>
+                <tr>
+                  <td>h</td>
+                  <td>f</td>
+                  <td>l</td>
+                  <td>e</td>
+                  <td>e</td>
+                  <td>t</td>
+                </tr>
+                <tr>
+                  <td>a</td>
+                  <td>t</td>
+                  <td>d</td>
+                  <td>a</td>
+                  <td>w</td>
+                  <td>n</td>
+                </tr>
+                <tr>
+                  <td>t</td>
+                  <td>o</td>
+                  <td>m</td>
+                  <td>o</td>
+                  <td>r</td>
+                  <td>r</td>
+                </tr>
+                <tr>
+                  <td>o</td>
+                  <td>w</td>
+                  <td>j</td>
+                  <td>q</td>
+                  <td>r</td>
+                  <td>w</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="fst-italic">As células que restarem na última linha recebem letras nulas. Então, as colunas são transpostas, obedecendo à ordem alfabética da palavra-chave (ABOSTU):</p>
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr class="table-primary">
+                  <th>A</th>
+                  <th>B</th>
+                  <th>O</th>
+                  <th>S</th>
+                  <th>T</th>
+                  <th>U</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>a</td>
+                  <td>t</td>
+                  <td>t</td>
+                  <td>k</td>
+                  <td>c</td>
+                  <td>a</td>
+                </tr>
+                <tr>
+                  <td>t</td>
+                  <td>r</td>
+                  <td>i</td>
+                  <td>s</td>
+                  <td>i</td>
+                  <td>b</td>
+                </tr>
+                <tr>
+                  <td>e</td>
+                  <td>f</td>
+                  <td>l</td>
+                  <td>t</td>
+                  <td>e</td>
+                  <td>h</td>
+                </tr>
+                <tr>
+                  <td>o</td>
+                  <td>t</td>
+                  <td>d</td>
+                  <td>n</td>
+                  <td>w</td>
+                  <td>a</td>
+                </tr>
+                <tr>
+                  <td>o</td>
+                  <td>o</td>
+                  <td>m</td>
+                  <td>r</td>
+                  <td>r</td>
+                  <td>t</td>
+                </tr>
+                <tr>
+                  <td>q</td>
+                  <td>w</td>
+                  <td>j</td>
+                  <td>w</td>
+                  <td>r</td>
+                  <td>q</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="fst-italic">Em seguida, a mensagem é transmitida coluna a coluna, e o texto fica:<br>ATEOOQ TRFTOW TILDMJ KSTNRW CIEWRR ABHATO</p>
+            <p class="fst-italic">Remover as letras nulas produz um texto cifrado de comprimento desigual, o que o torna mais fácil de decifrar. Para decifrar, inverte-se o processo - uma tarefa simples para quem tem a palavra-chave.</p>
+            <p class="fst-italic">Para confundir ainda mais os decifradores, a mensagem pode ser cifrada duas vezes, usando a mesma palavra-chave ou outra diferente. A marinha alemã não fazia isso, porque já estavam cifrando texto codificado.</p>
+            <p class="fst-italic">Para aumentar a segurança, os alemães mudaram seu livro de códigos em agosto de 1916. Mas, na noite de 23 de setembro, o zepelim L32 foi derrubado em Essex, matando os 22 tripulantes. Um exemplar chamuscado do novo livro de códigos foi encontrado entre os destroços. Outro exemplar foi recuperado por um mergulhador num submarino afundado no litoral de Kent. Assim, os decifradores da Sala 40 puderam continuar como antes.</p>
+            <h3 class="mt-5">Referência bibliográfica</h3>
+            <p>CIMINO, Al. A história da quebra dos códigos secretos. Ed. M.Books, 2018, p. 64. ISBN 978-85-7680-304-1.</p>
+            <h3 class="mt-5">Links de interesse</h3>
+            <ul>
+              <li><a href="https://en.wikipedia.org/wiki/Transposition_cipher">Transposition cipher (Wikipedia EN)</a></li>
+              <li><a href="https://pt.wikipedia.org/wiki/Cifra_de_transposi%C3%A7%C3%A3o">Cifra de transposição (Wikipedia PT)</a></li>
+            </ul>
+          </div>
+        </div>
+      </article>
+      <footer class="py-3 border-top">
+        <div class="container text-center">
           <p>
-            <label for="encryptKey">Chave</label>
-            <input type="text" name="encryptKey" id="encryptKey" placeholder="Insira a chave (ex. &quot;secreta&quot;)">
-          </p>
-          <p>
-            <label for="encryptKey">Mensagem</label>
-            <input type="text" name="encryptMessage" id="encryptMessage" placeholder="Insira a mensagem (ex. &quot;Bumba meu boi&quot;)">
-          </p>
-          <p>
-            <button id="btnResultCipher">Cifrar</button>
-          </p>
-          <p>
-            <label for="resultCipher">Cifra</label>
-            <textarea name="resultCipher" id="resultCipher" cols="30" rows="2" placeholder="dai euu gmb omy rbo sbe" readonly aria-readonly="true"></textarea>
+            Feito com curiosidade por Flávio Dutra<br>
+            <a href="https://github.com/flaviodut/transposition-cipher">Repositório GitHub</a>
           </p>
         </div>
-      </section>
-      <section>
-        <div>
-          <h2>Decifrar</h2>
-          <p>
-            <label for="decryptKey">Chave</label>
-            <input type="text" name="decryptKey" id="decryptKey" placeholder="Insira a chave (ex. &quot;secreta&quot;)">
-          </p>
-          <p>
-            <label for="decryptCipher">Cifra</label>
-            <input type="text" name="decryptCipher" id="decryptCipher" placeholder="Insira a cifra (ex. &quot;dai euu gmb omy rbo sbe&quot;)">
-          </p>
-          <p>
-            <button id="btnResultMessage">Decifrar</button>
-          </p>
-          <p>
-            <label for="resultMessage">Mensagem</label>
-            <textarea name="resultMessage" id="resultMessage" cols="30" rows="3" placeholder="bumbameuboiy" readonly aria-readonly="true"></textarea>
-          </p>
-        </div>
-      </section>
-      <footer>
-        <p>
-          Feito com curiosidade por Flávio Dutra
-          <a href="https://github.com/flaviodut/transposition-cipher">Repositório GitHub</a>
-        </p>
       </footer>
     </main>
     <script type="module" src="/main.js"></script>
